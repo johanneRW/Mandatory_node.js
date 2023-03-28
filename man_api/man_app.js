@@ -1,9 +1,12 @@
 import express from "express"
+import bodyParser from "body-parser"
+
 const app = express()
 
 //import path from "path"
 
 app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 import templateEngine from "./util/templateEngine.js"
 
@@ -37,6 +40,10 @@ const adminPage = templateEngine.renderPage(admin, {
     tabTitle: "Admin| Mandatory"
 })
 
+const edit = templateEngine.readPage("./public/pages/edit/edit.html")
+const editPage = templateEngine.renderPage(edit, {
+    tabTitle: "Edit | Mandatory"
+})
 
 
 app.get("/", (req, res) => {
@@ -63,7 +70,15 @@ app.get("/admin", (req, res) => {
     res.send(adminPage)
 })
 
+app.get("/edit", (req, res) => {
+    res.send(editPage)
+})
 
+app.post("/edit", (req, res) => {
+    console.log(req.body.title)
+    console.log(req.body.contents)
+    res.send(`Saved your page:<br>Title: ${req.body.title}<br>Contents:<br>${req.body.contents}`)
+})
 
 app.listen(8080, (error) => {
     if (error) {
