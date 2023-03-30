@@ -1,7 +1,7 @@
 const form = document.querySelector("#loginform")
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", (event) => {
     // remove default functionality 
-    e.preventDefault()
+    event.preventDefault()
 
     // get values of username and password fields
     const username = document.querySelector("#username", form).value

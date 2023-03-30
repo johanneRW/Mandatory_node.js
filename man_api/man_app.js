@@ -15,14 +15,14 @@ const mainPage = templateEngine.renderPage(main, {
     tabTitle: "Main | Mandatory"
 })
 
-const git_deploy = templateEngine.readPage("./public/pages/git_deploy/git_deploy.html")
-const git_deployPage = templateEngine.renderPage(git_deploy, {
-    tabTitle: "Git + Deploye | Mandatory"
+const gitTerminal = templateEngine.readPage("./public/pages/git_terminal/git_terminal.html")
+const gitTerminalPage = templateEngine.renderPage(gitTerminal, {
+    tabTitle: "Git + Terminal | Mandatory"
 })
 
-const frontend = templateEngine.readPage("./public/pages/Frontend/frontend.html")
-const frontendPage = templateEngine.renderPage(frontend, {
-    tabTitle: "Frontend | Mandatory"
+const toolsPlatform = templateEngine.readPage("./public/pages/tools_platform/tools_platform.html")
+const toolsPlatformPage = templateEngine.renderPage(toolsPlatform, {
+    tabTitle: "Tools and Platform | Mandatory"
 })
 
 const core_js = templateEngine.readPage("./public/pages/core_js/core_js.html")
@@ -30,9 +30,9 @@ const core_jsPage = templateEngine.renderPage(core_js, {
     tabTitle: "Core_js | Mandatory"
 })
 
-const backend = templateEngine.readPage("./public/pages/backend/backend.html")
-const backendPage = templateEngine.renderPage(backend, {
-    tabTitle: "Backend | Mandatory"
+const webApp = templateEngine.readPage("./public/pages/web_app/web_app.html")
+const webAppPage = templateEngine.renderPage(webApp, {
+    tabTitle: "web application | Mandatory"
 })
 
 const admin = templateEngine.readPage("./public/pages/admin/admin.html")
@@ -50,16 +50,16 @@ app.get("/", (req, res) => {
     res.send(mainPage);
 })
 
-app.get("/git_deploy", (req, res) => {
-    res.send(git_deployPage)
+app.get("/gitTerminal", (req, res) => {
+    res.send(gitTerminalPage)
 })
 
-app.get("/backend", (req, res) => {
-    res.send(backendPage)
+app.get("/toolsPlatform", (req, res) => {
+    res.send(toolsPlatformPage)
 })
 
-app.get("/frontend", (req, res) => {
-    res.send(frontendPage)
+app.get("/webApplication", (req, res) => {
+    res.send(webAppPage)
 })
 
 app.get("/core_js", (req, res) => {
