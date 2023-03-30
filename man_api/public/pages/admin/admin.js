@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
     const password = document.querySelector("#password", form).value
 
     // check username and password
-    if ((username === "bio") && (password === "graf")) {
+    if ((username === "manda") && (password === "tory")) {
         // redirect to protected page
         window.location.replace("/edit")
     } else {

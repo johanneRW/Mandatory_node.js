@@ -2,7 +2,7 @@
 "version": "0.0.1",
 "description": "Mandatory 1 Node.js",
 "type": "module",
-"main": "main.js",
+"main": "man_app.js",
 
 "scripts": {
   "start": "nodemon man_app.js"

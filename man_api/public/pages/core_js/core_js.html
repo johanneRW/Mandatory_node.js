@@ -4,10 +4,10 @@
   <br>
   <ul>
     <li><a href="#Datatypes">Datatypes</a></li>
-    <li><a href="#Map/filter/find_and_loops">Map/filter/find and loops</a></li>
-    <li><a href="#Arrays">Arrays</a></li>
-    <li><a href="#Dates">Dates</a></li>
     <li><a href="#Const_let_and_var">Const, let and var</a></li>
+    <li><a href="#Arrays">Arrays</a></li>
+    <li><a href="#Map/filter/find_and_loops">Map/filter/find and loops</a></li>
+    <li><a href="#Dates">Dates</a></li>
     <li><a href="#Functions">Functions</a></li>
   </ul>
   <br>
@@ -35,92 +35,40 @@
     This can sometimes lead to unexpected results.
     <pre>
 <code>
-    2 == "2" (true) 
+2 == "2" (true)
 
-    2 != “2” (false) 
-  </code>
+2 != “2” (false)
+</code>
 </pre>
     <b> Hard equality (===)</b> compares two values for equality without converting their types. <br>
     This means that both the value and type of the operands must match for the comparison to return true.<br>
     For instance, "2" === 2 would return false, since the operands are of different types.<br>
     <pre>
 <code>
-    2 === "2" (false) 
+2 === "2" (false)
 
-    2 !== "2" (true) 
-  </code>
+2 !== "2" (true)
+</code>
 </pre>
     In general, it's a good practice to use hard equality (===) in JavaScript, as it ensures that values are compared
     without type coercion, which can help avoid bugs and unexpected behavior in your code.
   </div>
 <br>
 <div class="topic">
-  <h5 id="Map/filter/find_and_loops">Map/filter/find and loops</h5>
-  There are different ways of creating loops in Javascript. There are classic “for” loops, but also specialized
-  functions such as “map”, “filter” and “find”. <br>
-  The old school “for” loop is considered verbose, ineffective and error prone.<br>
-  It is easy to create a “for” loop which modifies the data it is working on, rather than creating a copy of the data
-  with the desired changes. This can unexpectedly modify the original data. <br>
-  The classic “for” loop is only used in situations where you normally would be counting up (as you would do with your
-  fingers, counting how many times something is done.) <br>
-  Instead you should usually use loop methods such as “map”, “filter” and “find”, which all return new data instead of
-  modifying the original data. <br>
+  <h5 id="Const_let_and_var">Const, let and var</h5>
+  There are three types of variables in JavaScript and the rule is:<br>
+  <b>Use <i>const</i> if you can, <i>let</i> if you must, and never use <i>var.</i></b><br>
   <br>
-  <li><b>map():</b> creates a new array with the results of calling a function for every array element. </li>
-  Map() does not modify the original array.
-  When using map it can be useful to use <b>the spread operater (...)</b> <br>
-  the spread operator can be used to create a new array that includes the elements from the original array as well as
-  additional elements. For example: <br>
-  <pre>
-    <code>
-  const rocks = [ 
-  { name: "Pet rock", age: 2 }, 
-  { name: "Led Zeppelin", age: 55 }, 
-  { name: "Dwayne Johnson", age: 50 }, 
-  { name: "Granite", age: 100_000_000_000 } 
-  ] 
-  
-  const rocksAgedOneYear = rocks.map(rock => ({ ...rock, age: rock.age+1 })) 
-  
-  console.log(rocksAgedOneYear) 
-
-  Output:
-  [ 
-    { name: 'Pet rock', age: 3 }, 
-    { name: 'Led Zeppelin', age: 56 }, 
-    { name: 'Dwayne Johnson', age: 51 }, 
-    { name: 'Granite', age: 100000000001 } 
-  ] 
-</code>
-</pre>
-  <li><b>filter()</b> creates a new array with all array elements that matches a given condition. </li>
-  It does not modify the original array.
-  <pre>
-    <code> 
-  const numbers = [1, 3, 5, 2, 4] 
-  
-  const evenNumbers = numbers.filter((number) => number % 2 === 0) 
-  console.log(evenNumbers)
-   
-  Output:[2, 4] 
-</code>
-</pre>
-  <li>The <b>find()</b> method returns the value of the first element in an array that matches a given condition. If
-    more than one element matches it will be the first element that matches the conditions that is returned. </li>
-  If no element satisfies the given condition, undefined is returned. <br>
-  <pre>
-    <code>
-  const numbers = [1,2,3, 4] 
-   
-  const firstEven = numbers.find((number) => { 
-    return number % 2 === 0
-  });
-   
-  console.log(firstEven)
-
-  Output: 2
-</code>
-</pre>
+  <b>const</b><br>
+  const is used to declare a variable with a constant value.<br>
+  Use const when declaring variables when you know their value will not change.<br><br>
+  <b>let</b><br>
+  Use let to declare variables when you know the value will change.<br>
+  let is used to declare a variable that is only accessible within the block in which it is defined.<br><br>
+  <b>var</b><br>
+  We don't use var anymore.<br>
+  Var is generally not used anymore because it creates a global variable, and var is not scope-dependent.<br>
+  This means that using var can lead to unexpected behavior.
 </div>
 <br>
 <div class="topic">
@@ -141,23 +89,90 @@
     </li>
     <pre>
     <code>
-  const fruits = ['apple', 'banana', 'orange', 'peach']
+const fruits = ['apple', 'banana', 'orange', 'peach']
+fruits.splice(2, 0, 'grape', 'kiwi')
+console.log(fruits)
 
-  fruits.splice(2, 0, 'grape', 'kiwi')
+// Output: ['apple', 'orange', 'grape', 'kiwi', 'peach']
 
-  console.log(fruits)
-  
-  Output: ['apple', 'orange', 'grape', 'kiwi', 'peach']
+// replace two elements starting at index 1
+fruits.splice(1, 2, 'mango', 'papaya')
+console.log(fruits)
 
-  // replace two elements starting at index 1
-  fruits.splice(1, 2, 'mango', 'papaya')
-
-  console.log(fruits)
-  
-  Output: ['apple', 'mango', 'papaya', 'kiwi', 'peach']
+// Output: ['apple', 'mango', 'papaya', 'kiwi', 'peach']
 </code>
 </pre>
   </ul>
+</div>
+<br>
+<div class="topic">
+  <h5 id="Map/filter/find_and_loops">Map/filter/find and loops</h5>
+  There are different ways of creating loops in Javascript. There are classic “for” loops, but also specialized
+  functions such as “map”, “filter” and “find”. <br>
+  The old school “for” loop is considered verbose, ineffective and error prone.<br>
+  It is easy to create a “for” loop which modifies the data it is working on, rather than creating a copy of the data
+  with the desired changes. This can unexpectedly modify the original data. <br>
+  The classic “for” loop is only used in situations where you normally would be counting up (as you would do with your
+  fingers, counting how many times something is done.) <br>
+  Instead you should usually use loop methods such as “map”, “filter” and “find”, which all return new data instead of
+  modifying the original data. <br>
+  <br>
+  <li><b>map():</b> creates a new array with the results of calling a function for every array element. </li>
+  Map() does not modify the original array.
+  When using map it can be useful to use <b>the spread operater (...)</b> <br>
+  the spread operator can be used to create a new array that includes the elements from the original array as well as
+  additional elements. For example: <br>
+  <pre>
+    <code>
+const rocks = [
+  { name: "Pet rock", age: 2 },
+  { name: "Led Zeppelin", age: 55 },
+  { name: "Dwayne Johnson", age: 50 },
+  { name: "Granite", age: 100_000_000_000 }
+]
+
+const rocksAgedOneYear = rocks.map(rock => ({ ...rock, age: rock.age + 1 }))
+
+console.log(rocksAgedOneYear) 
+
+// Output:
+[ 
+  { name: 'Pet rock', age: 3 }, 
+  { name: 'Led Zeppelin', age: 56 }, 
+  { name: 'Dwayne Johnson', age: 51 }, 
+  { name: 'Granite', age: 100000000001 } 
+] 
+</code>
+</pre>
+  <li><b>filter()</b> creates a new array with all array elements that matches a given condition. </li>
+  It does not modify the original array.
+  <pre>
+    <code>
+const numbers = [1, 3, 5, 2, 4]
+
+const evenNumbers = numbers.filter((number) => number % 2 === 0)
+
+console.log(evenNumbers)
+
+// Output: [2, 4]
+</code>
+</pre>
+  <li>The <b>find()</b> method returns the value of the first element in an array that matches a given condition. If
+    more than one element matches it will be the first element that matches the conditions that is returned. </li>
+  If no element satisfies the given condition, undefined is returned. <br>
+  <pre>
+    <code>
+const numbers = [1, 2, 3, 4]
+
+const firstEven = numbers.find((number) => {
+  return number % 2 === 0
+});
+
+console.log(firstEven)
+
+// Output: 2
+</code>
+</pre>
 </div>
 <br>
 <div class="topic">
@@ -182,27 +197,10 @@
   know that in an array of weekdays, the weekdays start on a Sunday, as is normal in the US calendar.
   <pre>
     <code>
-  Weekdays = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
+weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 </code>
 </pre>
   The months run from January to December, where January = 0 and December = 11.
-</div>
-<br>
-<div class="topic">
-  <h5 id="Const_let_and_var">Const, let and var</h5>
-  There are three types of variables in JavaScript and the rule is:<br>
-  <b>Use <i>const</i> if you can, <i>let</i> if you must, and never use <i>var.</i></b><br>
-  <br>
-  <b>const</b><br>
-  const is used to declare a variable with a constant value.<br>
-  Use const when declaring variables when you know their value will not change.<br><br>
-  <b>let</b><br>
-  Use let to declare variables when you know the value will change.<br>
-  let is used to declare a variable that is only accessible within the block in which it is defined.<br><br>
-  <b>var</b><br>
-  We don't use var anymore.<br>
-  Var is generally not used anymore because it creates a global variable, and var is not scope-dependent.<br>
-  This means that using var can lead to unexpected behavior.
 </div>
 <br>
 <div class="topic">
@@ -217,17 +215,17 @@
   Example function definitions:<br>
   <pre>
     <code>
-  function random(min, max) {
+function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
 
-  const randomAnonymousFunction = function (min, max) {
+const randomAnonymousFunction = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
 
-  const randomArrowFunction = (min, max) => {
+const randomArrowFunction = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
 </code>
 </pre>
   Finally, we have <b>callback functions.</b><br>
@@ -240,18 +238,16 @@
   Example of a callback function:<br>
   <pre>
     <code>
-  function genericActionPerformer(genericAction, genericName) {
+function genericActionPerformer(genericAction, genericName) {
   // do stuff...
   return genericAction(genericName)
-  }
+}
 
-  const subtract = (name) => `${name} is subtracting.`
-  console.log(genericActionPerformer(subtract, "aName"))
+const subtract = (name) => `${name} is subtracting.`
+console.log(genericActionPerformer(subtract, "aName"))
 
-  const walk = (name) => `${name} is walking.`
-  console.log(genericActionPerformer(walk, "nameName"))
+const walk = (name) => `${name} is walking.`
+console.log(genericActionPerformer(walk, "nameName"))
 </code>
 </pre>
 </div>
-
-<script type="module" src="../pages/core_js/core_js.js"></script>

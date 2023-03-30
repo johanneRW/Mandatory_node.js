@@ -1,6 +1,6 @@
 <div class="container px-4 py-5" id="featured-3">
   <h2>Tools and Platform</h2>
-  <p class="resume">......</p>
+  <p class="resume">Here we will go through the tools used to build an Express web application using <code>npm</code> and NodeJS.</p>
   <br>
   <ul>
     <li><a href="#Node_js">Node.js</a></li>
@@ -32,13 +32,13 @@
     When installing with “npm” you can choose to install a package globally: <br>
     <pre>
   <code>
-npm install -g nameOfPackage  
+npm install -g nameOfPackage
 </code>
 </pre>
     Or local in your project:
     <pre>
   <code>
-npm i nameOfPackage 
+npm i nameOfPackage
 </code>
 </pre>
     What you prefer depends on your program and your environment. <br>
@@ -58,39 +58,40 @@ npm i nameOfPackage
     An example of a package.json file: <br>
     <pre>
     <code>
-  { 
-  "name": "appName", 
-  "version": "0.0.1", 
-  "description": "My Project description", 
-  "type": "module", 
-  "main": "app.js", 
-  "scripts": { 
-  "test": "echo \"Error: no test specified\" && exit 1", 
-  "cross-dev": "cross-env PORT=9090 nodemon app.js", 
-  "cross-prod": "cross-env PORT=80 node app.js", 
-  "dev": "PORT=8080 nodemon app.js", 
-  "prod": "PORT=80 node app.js" 
-  }, 
-  "repository": { 
-  "type": "git", 
-  "url": "git+https://github.com/myName/myProject.git" 
-  }, 
-  "keywords": [ 
-  "aKeyWord", 
-  "AnOtherKeyWord"], 
-  "author": "Name Name", 
-  "license": "MIT", 
-  "bugs": { 
-  "url": "https://github.com/myName/myProject/issues” 
-  }, 
-  "dependencies": { 
-  "cross-env": "^7.0.3", 
-  "escape-html": "^1.0.3", 
-  "express": "^4.18.2", 
-  "nodemon": "^2.0.22", 
-  "sentiment": "^5.0.2" 
-  } 
-  } 
+{ 
+  "name": "appName",
+  "version": "0.0.1",
+  "description": "My Project description",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cross-dev": "cross-env PORT=9090 nodemon app.js",
+    "cross-prod": "cross-env PORT=80 node app.js",
+    "dev": "PORT=8080 nodemon app.js",
+    "prod": "PORT=80 node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myName/myProject.git"
+  },
+  "keywords": [
+    "aKeyWord",
+    "AnOtherKeyWord"
+  ],
+  "author": "Name Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/myName/myProject/issues”
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "escape-html": "^1.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "sentiment": "^5.0.2"
+  }
+}
 </code>
 </pre>
   </div>
@@ -112,24 +113,24 @@ npm i nameOfPackage
     You can choose to install Nodemon globally via the terminal using npm: <br>
     <pre>
     <code>
-  npm install -g nodemon 
+npm install -g nodemon
 </code>
 </pre>
     Or locally as a script in your package.json: <br>
     <pre>
     <code>
-  "scripts": { 
-    "start": "nodemon time_app.js" 
-  } 
+"scripts": {
+  "start": "nodemon time_app.js"
+} 
 </code>
 </pre>
     By default, Nodemon monitors changes in JS files, but you can add more file types by creating a "nodemon.json" file.
     Add the following to the file: <br>
     <pre>
     <code>
-  { 
-    "ext": "js,json,html,css" 
-  } 
+{
+  "ext": "js,json,html,css"
+}
 </code>
 </pre>
     Now your Nodemon will restart when changes are detected in the listed file types. <br>
@@ -151,18 +152,18 @@ npm i nameOfPackage
     installed successfully, a dependency will be added to the file that looks like this: <br>
     <pre>
   <code>
-"dependencies": { "express": "^4.18.2" } 
+"dependencies": { "express": "^4.18.2" }
 </code>
 </pre>
     With Express installed, you can create a basic "hello world" app by writing the following code in a new JS file:
     <pre>
   <code>
 const express = require("express")
-const app = express() 
+const app = express()
 
-app.get("/", (req, res) => { 
-  res.send("Hello World") 
-}); 
+app.get("/", (req, res) => {
+  res.send("Hello World")
+})
 
 app.listen(8080)
 </code>
@@ -170,7 +171,7 @@ app.listen(8080)
     To check if your project is running, you can add the following code:
     <pre>
   <code>
-app.listen(8080, () => { 
+app.listen(8080, () => {
   console.log("Server is running on port", 8080)
 })
 </code>
@@ -181,16 +182,15 @@ app.listen(8080, () => {
   <code>
 const PORT = Number(process.env.PORT) || 8080
 
-app.listen(PORT, (error) => { 
-  if (error) { 
+app.listen(PORT, (error) => {
+  if (error) {
     console.log(error)
-  } 
-    console.log("Server running on port", PORT)
-  })
-
-In this example, the port is set as a const to help display it using “console.log”. 
+  }
+  console.log("Server running on port", PORT)
+})
 </code>
 </pre>
+In this example, the port is set as a const to help display it using “console.log”. 
   </div>
   <br>
   <div class="topic">
@@ -208,13 +208,12 @@ In this example, the port is set as a const to help display it using “console.
     You can either call the pages from the app.js as <br>
     <pre>
   <code>
-const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString() 
-const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html".toString() 
-const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
+const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString()
+const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html".toString()
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString()
 
-app.get("/", (req, res) => { 
-
-res.send(navbar+frontpage+navbar)
+app.get("/", (req, res) => {
+  res.send(navbar + frontpage + footer)
 })
 </code>
 </pre>
@@ -223,28 +222,28 @@ res.send(navbar+frontpage+navbar)
     <pre>
   <code>
 const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html")
-const frontpagePage = templateEngine.renderPage(frontpage, { 
-tabTitle: "Upper | Welcome" 
+const frontpagePage = templateEngine.renderPage(frontpage, {
+  tabTitle: "Upper | Welcome"
 })
-
-
+</code>
+</pre>
 “templateEngine.js”: 
+<pre>
+<code>
+function renderPage(page, config={}) {
+  const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString()
+    .replace("$TAB_TITLE", config.tabTitle || "Upper")
+    .replace("$CSS_LINK", config.cssLink || "")
 
+  const footer = fs.readFileSync("./public/components/footer/footer.html").toString()
+    .replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}`)
 
-function renderPage(page, config={}) { 
-const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString() 
-.replace("$TAB_TITLE", config.tabTitle || "Upper") 
-.replace("$CSS_LINK", config.cssLink || "")
+  return navbar + page + footer
+}
 
-const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
-.replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}`)
-
-return navbar + page + footer
-} 
-
-function readPage(pagePath) { 
-return fs.readFileSync(pagePath).toString() 
-} 
+function readPage(pagePath) {
+  return fs.readFileSync(pagePath).toString()
+}
 </code>
 </pre>
   </div>
@@ -259,24 +258,22 @@ return fs.readFileSync(pagePath).toString()
     like this:
     <pre>
   <code>
-{ 
-"version": 2, 
-"builds": [ 
-{ 
-"src": "app.js", 
-"use": "@now/node" 
-} 
-], 
-"routes": [ 
-{ 
-"src": "/(.*)", 
-"dest": "app.js" 
-} 
-] 
-} 
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
+  ]
+}
 </code>
 </pre>
   </div>
 </div>
-
-<script type="module" src="../pages/tools_platform/tools_platform.js"></script>

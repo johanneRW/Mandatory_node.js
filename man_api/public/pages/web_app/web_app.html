@@ -1,32 +1,25 @@
 <div class="container px-4 py-5" id="featured-3">
   <h2>Web applications</h2>
-  <p class="resume">.......</p>
+  <p class="resume">This page will introduce some common concepts in web application programming.</p>
   <br>
-  <ul>
-    <li><a href="#Frontend_structure">Frontend structure</a></li>
+  <ul> 
     <li><a href="#REST-API_and_CRUD">REST-API and CRUD</a></li>
+    <li><a href="#Client/server">Client/server</a></li>
     <li><a href="#Fetch">Fetch</a></li>
     <li><a href="#Static_files">Static files</a></li>
-    <li><a href="#Client/server">Client/server</a></li>
     <li><a href="#Import_and_export">Import and export</a></li>
-    <li><a href="#readFileSync">ReadFileSync</a></li>
+    <li><a href="#readFileSync">readFileSync</a></li>
     <li><a href="#Redirection">Redirection</a></li>
     <li><a href="#Escaping_HTML_and_preventing_XSS">Escaping HTML and preventing XSS</a></li>
     <li><a href="#body-parser">Body-parser</a></li>
     <li><a href="#URL_encoding">URL encoding</a></li>
+    <li><a href="#Frontend_structure">Frontend structure</a></li>
   </ul>
-  <br>
-  <div class="topic">
-    <h5 id="Frontend_structure">Frontend structure</h5>
-    Frontend structure refers to the organization and arrangement of the different components and files in a project.
-    <br>
-    This structure helps to keep the code organized and maintainable. <br>
-  </div>
   <br>
   <div class="topic">
     <h5 id="REST-API_and_CRUD"> REST-API and CRUD</h5>
     REST API or RESTful API is used to transfer data between servers and clients.<br>
-    REST APIs are built around a set of principles that define how systems communicate using web standards such as HTTPand URLs.<br>
+    REST APIs are built around a set of principles that define how systems communicate using web standards such as HTTP and URLs.<br>
     For Node.js, Express is one framework for building REST APIs. It makes creating endpoints, handling requests, and
     sending responses easier. <br>
     A REST API sends and receives data in JSON format, so you might need to parse the request and response.<br>
@@ -61,7 +54,7 @@ app.use(express.json())
       </tr>
       <tr>
         <td>GET </td>
-        <td>/songs/<id>
+        <td>/songs/&lt;id&gt;
         </td>
       </tr>
       <tr>
@@ -70,17 +63,17 @@ app.use(express.json())
       </tr>
       <tr>
         <td>PUT </td>
-        <td>/songs/<id>
+        <td>/songs/&lt;id&gt;
         </td>
       </tr>
       <tr>
         <td>PATCH </td>
-        <td>/songs/<id>
+        <td>/songs/&lt;id&gt;
         </td>
       </tr>
       <tr>
         <td>DELETE </td>
-        <td>/songs/<id>
+        <td>/songs/&lt;id&gt;
         </td>
       </tr>
     </table>
@@ -103,47 +96,14 @@ app.use(express.json())
   made.<br>
   <pre>
   <code>
-fetch("/api/tanks") 
-.then(response => response.json()) 
-.then(result => { 
-console.log(result) 
-} 
+fetch("/api/tanks")
+  .then(response => response.json())
+  .then(result => {
+    console.log(result)
+  }
 </code>
 </pre>
 </div>
-<div class="topic">
-  <h5 id="Static_files">Static files</h5>
-  <pre>
-      <code>
-const express = require('express')
-const app = express()
- 
-app.use(express.static('public'))
- 
-app.listen(8080, () => { 
-  console.log(“Server listening on port”,8080)
-})
-</code>
-</pre>
-  Static files are files served to the server without being modified or processed. These often include images, CSS,
-  JavaScript, and HTML.<br>
-  If you want to control or limit direct access to your application, you can use Express to handle this.<br>
-  To restrict the client's access to certain parts of your code, you can use the following code:<br>
-  <pre>
-  <code>
-const express = require('express')
-const app = express()
-  
-app.use(express.static('public')) 
-  
-app.listen(8080, () => {  
-  console.log("Server listening on port", 8080) 
-})
-</code>
-</pre>
-  Note that express.static('public') specifies that the public directory should be made available to the client.<br>
-</div>
-<br>
 <div class="topic">
   <h5 id="Client/server">Client/server</h5>
   Clients are all our devices with access to the internet as phones, computers, tables and more.<br>
@@ -159,6 +119,27 @@ app.listen(8080, () => {
   You can use JavaScript to write server-side code that can handle incoming requests from a clients and generate
   responses.<br>
   Node has multiple frameworks to build server-side applications, such as Express.js<br>
+</div>
+<br>
+<div class="topic">
+  <h5 id="Static_files">Static files</h5>
+  Static files are files served to the server without being modified or processed. These often include images, CSS,
+  JavaScript, and HTML.<br>
+  If you want to control or limit direct access to your application, you can use Express to handle this.<br>
+  To restrict the client's access to certain parts of your code, you can use the following code:<br>
+  <pre>
+  <code>
+const express = require('express')
+const app = express()
+
+app.use(express.static('public'))
+
+app.listen(8080, () => {
+  console.log("Server listening on port", 8080)
+})
+</code>
+</pre>
+  Note that <code>express.static('public')</code> specifies that the public directory should be made available to the client.<br>
 </div>
 <br>
 <div class="topic">
@@ -182,16 +163,16 @@ const express = require("express")
   You can also use “import” to do the same:
   <pre>
   <code>
-Import express from “express” 
+import express from “express” 
 </code>
 </pre>
   If you want to export, you can use the export keyword:
   <pre>
   <code>
-export default { 
-  renderPage, 
-  readPage, 
-} 
+export default {
+  renderPage,
+  readPage,
+}
 </code>
 </pre>
   <b>HTML</b><br>
@@ -199,12 +180,12 @@ export default {
   files and specifying the path to the JavaScript file:<br>
   <pre>
   <code>
-    &lt;script src="/myPage/myPage.js"&gt;&lt;/script&gt;
+&lt;script src="/myPage/myPage.js"&gt;&lt;/script&gt;
 </code>
 </pre>
 </div>
 <div class="topic">
-  <h5 id="readFileSync">ReadFileSync</h5>
+  <h5 id="readFileSync">readFileSync</h5>
   <b>readFileSync</b> is a synchronous method provided by the <b>“fs”</b>  module in Node.js.<br>
   “fs” stands for <b>file system</b> and is used to write to files and read from files.<br>
   The method takes the path of a file as an argument.<br>
@@ -222,7 +203,7 @@ export default {
   One way of implementing it on the server-side is using the Express method<br>
   <pre>
   <code>
-response.redirect(statusCode, url)  
+response.redirect(statusCode, url)
 </code>
 </pre>
   This sends a redirect response with the specified URL and status code. <br>
@@ -245,9 +226,9 @@ window.location.replace(url)
   In NodeJS, you can escape HTML using:
   <pre>
   <code>
-import escape from "escape-html" 
+import escape from "escape-html"
 
-let escaped = escape(“some html”) 
+let escaped = escape(“some html”)
 </code>
 </pre>
 </div>
@@ -262,21 +243,21 @@ let escaped = escape(“some html”)
   Here is an example code snippet:
   <pre>
   <code>
-import express from "express" 
+import express from "express"
 
-import bodyParser from "body-parser" 
+import bodyParser from "body-parser"
 
-const app = express() 
+const app = express()
 
-app.use(bodyParser.urlencoded({ extended: true })) 
- 
-app.post('/users', function(req, res) { 
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.post('/users', function(req, res) {
   console.log(req.body)
   res.send('User created successfully')
 })
 </code>
 </pre>
-  The “req.body” property is used here to access the parsed data. Here we just log the parsed data in the console.
+  The <code>req.body</code> property is used here to access the parsed data. Here we just log the parsed data in the console.
 </div>
 <div class="topic">
   <h5 id="URL_encoding">URL encoding</h5>
@@ -289,9 +270,15 @@ app.post('/users', function(req, res) {
   You can accept URL encoding in Express using:
   <pre>
   <code>
-app.use(bodyParser.urlencoded({ extended: true })) 
+app.use(bodyParser.urlencoded({ extended: true }))
 </code>
 </pre>
 </div>
+<div class="topic">
+  <h5 id="Frontend_structure">Frontend structure</h5>
+  Frontend structure refers to the organization and arrangement of the different components and files in a project.
+  <br>
+  This structure helps to keep the code organized and maintainable. <br>
 </div>
-<script type="module" src="..pages/web_app/web_app.js"></script>
+<br>
+</div>
