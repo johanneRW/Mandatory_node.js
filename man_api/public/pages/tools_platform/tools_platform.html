@@ -1,46 +1,281 @@
 <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Frontend</h2>
-    <p>Find out more about how to structure frontend code and client-side vs. server-side redirects</p>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <!-- <div class="feature col">
-        <h3 class="fs-2">Welcome</h3>
-        <p>Here you will find a documentation site based on the Full Stack NodeJS course.</p>
-      
-      </div> -->
-      <div class="feature col">
-        <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-        
-      </div>
-      <div class="feature col">
-        
-        <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-        
-      </div>
-      <div class="feature col">
-       <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-      
-      </div>
-      <div class="feature col">
-       <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-        
-      </div>
-      <div class="feature col">
-        
-       <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-        
-      </div>
-      <div class="feature col">
-        
-       <h3 class="fs-2">text</h3>
-        <p>more_text.</p>
-        
-      </div>
-    </div>
+  <h2 class="pb-2 border-bottom">Tools and Platform</h2>
+  <p>......</p>
+  <br>
+  <ul>
+    <li><a href="#Node_js">Node.js</a></li>
+    <li><a href="#Npm">Npm</a></li>
+    <li><a href="#Package_json">Package.json</a></li>
+    <li><a href="#Node_modules">Node_modules</a></li>
+    <li><a href="#Nodemon">Nodemon</a></li>
+    <li><a href="#Express">Express</a></li>
+    <li><a href="#Server-side_Rendering_(SSR)">Server-side Rendering (SSR)</a></li>
+    <li><a href="#Vercel ">Vercel</a></li>
+  </ul>
+  <div>
+    <h5 id="Node_js">Node.js</h5>
+    Node.js is a runtime environment that executes JavaScript code. It is used for building server-side and web
+    applications. Node.js applications are written in JavaScript.<br>
+    Node.js also provides a rich library of various JavaScript modules, which greatly simplifies the development of web
+    applications. <br>
+    Node.js includes a library of modules for building web applications. Additionally, Node.js has a built-in package
+    manager (npm), which makes it easy to install libraries and packages that are not included in the Node.js library.
+    <br>
   </div>
+  <br>
+  <div>
+    <h5 id="Npm">Npm</h5>
+    NPM stands for Node Package Manager. <br>
+    npm is a command-line tool used to install and manage package/modules in node
+    Using the command “npm I" followed by the name of a package, the package will be added to your “package.json” as a
+    dependency. <br><br>
+    When installing with “npm” you can choose to install a package globally: <br>
+    <pre>
+  <code>
+npm install -g nameOfPackage  
+</code>
+</pre>
+    Or local in your project:
+    <pre>
+  <code>
+npm i nameOfPackage 
+</code>
+</pre>
+    What you prefer depends on your program and your environment. <br>
+    It may be preferable to have some programs/packages installed globally so they are always present when you're
+    coding. <br>
+    And some programs may be a “one off” and used only in one project. In that case it may be better to only install in
+    the project. <br>
+  </div>
+  <br>
+  <div>
+    <h5 id="Package_json">Package.json</h5>
+    package.json is a file used in Node.js projects to define metadata about the project, including the name, version,
+    dependencies, scripts, keywords, author, license, repository URL, and more. <br>
+    The package.json file is used to manage dependencies and run scripts via npm. <br>
+    It is also an easy way to shift between a developer environment and a production environment. This is done by
+    script. <br>
+    An example of a package.json file: <br>
+    <pre>
+    <code>
+  { 
+  "name": "appName", 
+  "version": "0.0.1", 
+  "description": "My Project description", 
+  "type": "module", 
+  "main": "app.js", 
+  "scripts": { 
+  "test": "echo \"Error: no test specified\" && exit 1", 
+  "cross-dev": "cross-env PORT=9090 nodemon app.js", 
+  "cross-prod": "cross-env PORT=80 node app.js", 
+  "dev": "PORT=8080 nodemon app.js", 
+  "prod": "PORT=80 node app.js" 
+  }, 
+  "repository": { 
+  "type": "git", 
+  "url": "git+https://github.com/myName/myProject.git" 
+  }, 
+  "keywords": [ 
+  "aKeyWord", 
+  "AnOtherKeyWord"], 
+  "author": "Name Name", 
+  "license": "MIT", 
+  "bugs": { 
+  "url": "https://github.com/myName/myProject/issues” 
+  }, 
+  "dependencies": { 
+  "cross-env": "^7.0.3", 
+  "escape-html": "^1.0.3", 
+  "express": "^4.18.2", 
+  "nodemon": "^2.0.22", 
+  "sentiment": "^5.0.2" 
+  } 
+  } 
+</code>
+</pre>
+  </div>
+  <br>
+  <div>
+    <h5 id="Node_modules">Node_modules</h5>
+    The node_modules folder is where external dependencies and libraries are installed when you use npm. <br>
+    This folder is created automatically when you initialize a Node.js project and run npm install to install the
+    dependencies specified in the package.json file. <br>
+    The installed packages are then placed in the node_modules folder and can be imported and used in the application.
+    <br>
+  </div>
+  <br>
+  <div>
+    <h5 id="Nodemon">Nodemon</h5>
+    Nodemon is a utility tool for Node.js. <br>
+    Nodemon reloads your Node.js project whenever there are changes made to the code. This saves time and means you
+    don't have to remember to stop and restart your project each time the code is changed. <br>
+    You can choose to install Nodemon globally via the terminal using npm: <br>
+    <pre>
+    <code>
+  npm install -g nodemon 
+</code>
+</pre>
+    Or locally as a script in your package.json: <br>
+    <pre>
+    <code>
+  "scripts": { 
+    "start": "nodemon time_app.js" 
+  } 
+</code>
+</pre>
+    By default, Nodemon monitors changes in JS files, but you can add more file types by creating a "nodemon.json" file.
+    Add the following to the file: <br>
+    <pre>
+    <code>
+  { 
+    "ext": "js,json,html,css" 
+  } 
+</code>
+</pre>
+    Now your Nodemon will restart when changes are detected in the listed file types. <br>
+    You can also add Nodemon as a script in package.json if you want to differentiate between the development
+    environment and production environment. <br>
+  </div>
+  <br>
+  <div>
+    <h5 id="Express">Express</h5>
+    Express is a web framework for Node.js, built to make it quick and easy to create REST APIs, web applications, and
+    server-side applications. <br>
+    To use Express, you must ensure that you have npm and Node.js installed in your environment and have access to your
+    project in the terminal. <br><br>
+    To get started with Express, you need to create a file called "package.json" in your Node.js project. In this file,
+    add "{}" to initialize it. <br>
+    Then, run the command "npm i express" or "npm install express" in the terminal to install the Express package as a
+    dependency for your project. <br>
+    To check if Express has been installed correctly, you can go to the "package.json" file. If Express has been
+    installed successfully, a dependency will be added to the file that looks like this: <br>
+    <pre>
+  <code>
+"dependencies": { "express": "^4.18.2" } 
+</code>
+</pre>
+    With Express installed, you can create a basic "hello world" app by writing the following code in a new JS file:
+    <pre>
+  <code>
+const express = require("express"); 
+const app = express(); 
 
-  <script type="module" src="../pages/tools_platform/tools_platform.js"></script>
+app.get("/", (req, res) => { 
+  res.send("Hello World"); 
+}); 
+
+app.listen(8080); 
+</code>
+</pre>
+    To check if your project is running, you can add the following code:
+    <pre>
+  <code>
+app.listen(8080, () => { 
+  console.log("Server is running on port", 8080); 
+}); 
+</code>
+</pre>
+    Now you can visit http://localhost:8080/ in a browser to see your “Hello World” app. <br>
+    If you want to add error handling to the method, you can do it like this:
+    <pre>
+  <code>
+const PORT = Number(process.env.PORT) || 8080; 
+
+app.listen(PORT, (error) => { 
+  if (error) { 
+    console.log(error); 
+  } 
+    console.log("Server running on port", PORT); 
+  }); 
+
+In this example, the port is set as a const to help display it using “console.log”. 
+</code>
+</pre>
+  </div>
+  <br>
+  <div>
+    <h5 id="Server-side_Rendering_(SSR)">Server-side Rendering (SSR)</h5>
+    Server-side rendering (SSR) is a technique where the server generates the HTML content that is sent to the client
+    browser, rather than having the client browser download and execute a JavaScript file that generates the content
+    dynamically. <br>
+    This improves initial page load time and add search engine optimization (SEO) <br>
+    <br>
+    SSR can be implemented in many ways, there is different frameworks that provide SSR. <br>
+    But you can also make your own very simple one. <br>
+    This can be achieved by splitting up your HTML, so elements that are on every page are isolated into components,
+    e.g. “navbar” or “footer”. <br>
+    Now you only need to write the content that is unique to each page. <br>
+    You can either call the pages from the app.js as <br>
+    <pre>
+  <code>
+const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString() 
+const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html".toString() 
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
+
+app.get("/", (req, res) => { 
+
+res.send(navbar+frontpage+navbar); 
+}); 
+</code>
+</pre>
+    Or if you want to make your code even more reuseable, you can make a templateEngine that takes the pages as an
+    argument:
+    <pre>
+  <code>
+const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html"); 
+const frontpagePage = templateEngine.renderPage(frontpage, { 
+tabTitle: "Upper | Welcome" 
+}); 
+
+
+“templateEngine.js”: 
+
+
+function renderPage(page, config={}) { 
+const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString() 
+.replace("$TAB_TITLE", config.tabTitle || "Upper") 
+.replace("$CSS_LINK", config.cssLink || ""); 
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
+.replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}`); 
+
+return navbar + page + footer; 
+} 
+
+function readPage(pagePath) { 
+return fs.readFileSync(pagePath).toString(); 
+} 
+</code>
+</pre>
+  </div>
+  <br>
+  <div>
+    <h5 id="Vercel">Vercel </h5>
+    Vercel is a cloud platform for deploying websites and applications. It provides a way to deploy static websites and
+    applications. <br>
+    Vercel provides a platform for deploying applications without having to worry about infrastructure or server
+    management. Vercel provides continuous deployment when integrated with Github. <br>
+    In order to deploy your app to Vercel, you need to create a "vercel.json" file in your project. The file can look
+    like this:
+    <pre>
+  <code>
+{ 
+"version": 2, 
+"builds": [ 
+{ 
+"src": "app.js", 
+"use": "@now/node" 
+} 
+], 
+"routes": [ 
+{ 
+"src": "/(.*)", 
+"dest": "app.js" 
+} 
+] 
+} 
+</code>
+</pre>
+  </div>
+</div>
+
+<script type="module" src="../pages/tools_platform/tools_platform.js"></script>

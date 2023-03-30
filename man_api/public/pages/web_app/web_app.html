@@ -2,14 +2,29 @@
   <h2 class="pb-2 border-bottom">Web applications</h2>
   <p>.......</p>
   <br>
+  <ul>
+    <li><a href="#Frontend_structure">Frontend structure</a></li>
+    <li><a href="#REST-API_and_CRUD">REST-API and CRUD</a></li>
+    <li><a href="#Fetch">Fetch</a></li>
+    <li><a href="#Static_files">Static files</a></li>
+    <li><a href="#Client/server">Client/server</a></li>
+    <li><a href="#Import_and_export">Import and export</a></li>
+    <li><a href="#readFileSync">readFileSync</a></li>
+    <li><a href="#Redirection">Redirection</a></li>
+    <li><a href="#Escaping_HTML_and_preventing_XSS">Escaping HTML and preventing XSS</a></li>
+    <li><a href="#body-parser">body-parser</a></li>
+    <li><a href="#URL_encoding">URL encoding</a></li>
+  </ul>
+  <br>
   <div>
-    <h5>Frontend structure</h5>
+    <h5 id="Frontend_structure">Frontend structure</h5>
     Frontend structure refers to the organization and arrangement of the different components and files in a project.
     <br>
     This structure helps to keep the code organized and maintainable. <br>
   </div>
+  <br>
   <div>
-    <h5> REST-API and CRUD</h5>
+    <h5 id="REST-API_and_CRUD"> REST-API and CRUD</h5>
     REST API or RESTful API is used to transfer data between servers and clients.<br>
     REST APIs are built around a set of principles that define how systems communicate using web standards such as HTTP
     and URLs. <br>
@@ -75,7 +90,7 @@ app.use(express.json());
   <div>
     <br>
   </div>
-  <h5>Fetch</h5>
+  <h5 id="Fetch">Fetch</h5>
   fetch() is a method to make a HTTP request to a server, and get data back in response.<br>
   The fetch() method is commonly used for fetching resources such as HTML, JSON, or images.<br>
   There are different types of requests that can be made using fetch(), which correspondss to the REST operations:<br>
@@ -101,7 +116,7 @@ console.log(result)
 </div>
 <br>
 <div>
-  <h5>Static files</h5>
+  <h5 id="Static_files">Static files</h5>
   <pre>
       <code>
 const express = require('express'); 
@@ -134,7 +149,7 @@ app.listen(8080, () => {
 </div>
 <br>
 <div>
-  <h5>Client/server</h5>
+  <h5 id="Client/server">Client/server</h5>
   Clients are all our devices with access to the internet as phones, computers, tables and more.<br>
   They send requests to a server computer that holds the information.<br>
   The server finds the information, maybe in the form of a html file, and sends the response to the client.<br>
@@ -151,7 +166,7 @@ app.listen(8080, () => {
 </div>
 <br>
 <div>
-  <h5>Import and export</h5>
+  <h5 id="Import_and_export">Import and export</h5>
   JavaScript modules are used to organize and manage code. Import and export statements are used to control the
   visibility and accessibility of code across different modules.<br>
   The import and export statements allow you to create modular code that is easier to maintain. You can use the import
@@ -193,7 +208,7 @@ export default {
 </pre>
 </div>
 <div>
-  <h5>readFileSync</h5>
+  <h5 id="readFileSync">readFileSync</h5>
   readFileSync is a synchronous method provided by the “fs” module in Node.js.<br>
   “fs” stands for file system and is used to write to files and read from files.<br>
   The method takes the path of a file as an argument.<br>
@@ -202,7 +217,7 @@ export default {
 </div>
 <br>
 <div>
-  <h5>Redirection</h5>
+  <h5 id="Redirection">Redirection</h5>
   Redirection is the process of sending a response to a client with a different URL than the one initially
   requested.<br>
   When the client receives the redirect response, it will navigate to the new URL.<br>
@@ -223,7 +238,7 @@ window.location.replace(url)
 </pre>
 </div>
 <div>
-  <h5>Escaping HTML and preventing XSS</h5>
+  <h5 id="Escaping_HTML_and_preventing_XSS">Escaping HTML and preventing XSS</h5>
   XSS stands for Cross-Site Scripting. It is a type of security vulnerability that can occur in web applications.<br>
   XSS attacks happen when an attacker injects malicious code into a web page.<br>
   To prevent attacks, it is important to validate and sanitize user input on the server side and encode output on
@@ -242,7 +257,7 @@ let escaped = escape(“some html”)
 </div>
 <br>
 <div>
-  <h5>body-parser</h5>
+  <h5 id="body-parser">body-parser</h5>
   "body-parser" is a module for Node.js that allows you to extract the body portion of an incoming HTTP request and
   expose it on the request object.<br>
   When a client sends a POST, PUT, or DELETE request to a server, the request can include data in the request body. This
@@ -268,7 +283,7 @@ app.post('/users', function(req, res) {
   The “req.body” property is used here to access the parsed data. Here we just log the parsed data in the console.
 </div>
 <div>
-  <h5>URL encoding</h5>
+  <h5 id="URL_encoding">URL encoding</h5>
   URL encoding is used to convert special characters and spaces in a URL into a format that can be safely transmitted
   over the internet.<br>
   URL encoding ensures that all characters in a URL are recognized and interpreted correctly by web browsers and
