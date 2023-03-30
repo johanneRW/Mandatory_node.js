@@ -1,6 +1,6 @@
 <div class="container px-4 py-5" id="featured-3">
-  <h2 class="pb-2 border-bottom">Tools and Platform</h2>
-  <p>......</p>
+  <h2>Tools and Platform</h2>
+  <p class="resume">......</p>
   <br>
   <ul>
     <li><a href="#Node_js">Node.js</a></li>
@@ -12,7 +12,7 @@
     <li><a href="#Server-side_Rendering_(SSR)">Server-side Rendering (SSR)</a></li>
     <li><a href="#Vercel ">Vercel</a></li>
   </ul>
-  <div>
+  <div class="topic">
     <h5 id="Node_js">Node.js</h5>
     Node.js is a runtime environment that executes JavaScript code. It is used for building server-side and web
     applications. Node.js applications are written in JavaScript.<br>
@@ -23,7 +23,7 @@
     <br>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Npm">Npm</h5>
     NPM stands for Node Package Manager. <br>
     npm is a command-line tool used to install and manage package/modules in node
@@ -48,9 +48,9 @@ npm i nameOfPackage
     the project. <br>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Package_json">Package.json</h5>
-    package.json is a file used in Node.js projects to define metadata about the project, including the name, version,
+    <b>package.json</b> is a file used in Node.js projects to define metadata about the project, including the name, version,
     dependencies, scripts, keywords, author, license, repository URL, and more. <br>
     The package.json file is used to manage dependencies and run scripts via npm. <br>
     It is also an easy way to shift between a developer environment and a production environment. This is done by
@@ -95,7 +95,7 @@ npm i nameOfPackage
 </pre>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Node_modules">Node_modules</h5>
     The node_modules folder is where external dependencies and libraries are installed when you use npm. <br>
     This folder is created automatically when you initialize a Node.js project and run npm install to install the
@@ -104,7 +104,7 @@ npm i nameOfPackage
     <br>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Nodemon">Nodemon</h5>
     Nodemon is a utility tool for Node.js. <br>
     Nodemon reloads your Node.js project whenever there are changes made to the code. This saves time and means you
@@ -137,14 +137,14 @@ npm i nameOfPackage
     environment and production environment. <br>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Express">Express</h5>
     Express is a web framework for Node.js, built to make it quick and easy to create REST APIs, web applications, and
     server-side applications. <br>
     To use Express, you must ensure that you have npm and Node.js installed in your environment and have access to your
     project in the terminal. <br><br>
     To get started with Express, you need to create a file called "package.json" in your Node.js project. In this file,
-    add "{}" to initialize it. <br>
+    add <b>"{}"</b> to initialize it. <br>
     Then, run the command "npm i express" or "npm install express" in the terminal to install the Express package as a
     dependency for your project. <br>
     To check if Express has been installed correctly, you can go to the "package.json" file. If Express has been
@@ -157,43 +157,43 @@ npm i nameOfPackage
     With Express installed, you can create a basic "hello world" app by writing the following code in a new JS file:
     <pre>
   <code>
-const express = require("express"); 
-const app = express(); 
+const express = require("express")
+const app = express() 
 
 app.get("/", (req, res) => { 
-  res.send("Hello World"); 
+  res.send("Hello World") 
 }); 
 
-app.listen(8080); 
+app.listen(8080)
 </code>
 </pre>
     To check if your project is running, you can add the following code:
     <pre>
   <code>
 app.listen(8080, () => { 
-  console.log("Server is running on port", 8080); 
-}); 
+  console.log("Server is running on port", 8080)
+})
 </code>
 </pre>
     Now you can visit http://localhost:8080/ in a browser to see your “Hello World” app. <br>
     If you want to add error handling to the method, you can do it like this:
     <pre>
   <code>
-const PORT = Number(process.env.PORT) || 8080; 
+const PORT = Number(process.env.PORT) || 8080
 
 app.listen(PORT, (error) => { 
   if (error) { 
-    console.log(error); 
+    console.log(error)
   } 
-    console.log("Server running on port", PORT); 
-  }); 
+    console.log("Server running on port", PORT)
+  })
 
 In this example, the port is set as a const to help display it using “console.log”. 
 </code>
 </pre>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Server-side_Rendering_(SSR)">Server-side Rendering (SSR)</h5>
     Server-side rendering (SSR) is a technique where the server generates the HTML content that is sent to the client
     browser, rather than having the client browser download and execute a JavaScript file that generates the content
@@ -214,18 +214,18 @@ const footer = fs.readFileSync("./public/components/footer/footer.html").toStrin
 
 app.get("/", (req, res) => { 
 
-res.send(navbar+frontpage+navbar); 
-}); 
+res.send(navbar+frontpage+navbar)
+})
 </code>
 </pre>
     Or if you want to make your code even more reuseable, you can make a templateEngine that takes the pages as an
     argument:
     <pre>
   <code>
-const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html"); 
+const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html")
 const frontpagePage = templateEngine.renderPage(frontpage, { 
 tabTitle: "Upper | Welcome" 
-}); 
+})
 
 
 “templateEngine.js”: 
@@ -234,21 +234,22 @@ tabTitle: "Upper | Welcome"
 function renderPage(page, config={}) { 
 const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString() 
 .replace("$TAB_TITLE", config.tabTitle || "Upper") 
-.replace("$CSS_LINK", config.cssLink || ""); 
-const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
-.replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}`); 
+.replace("$CSS_LINK", config.cssLink || "")
 
-return navbar + page + footer; 
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString() 
+.replace("$FOOTER_YEAR", `© ${new Date().getFullYear()}`)
+
+return navbar + page + footer
 } 
 
 function readPage(pagePath) { 
-return fs.readFileSync(pagePath).toString(); 
+return fs.readFileSync(pagePath).toString() 
 } 
 </code>
 </pre>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Vercel">Vercel </h5>
     Vercel is a cloud platform for deploying websites and applications. It provides a way to deploy static websites and
     applications. <br>

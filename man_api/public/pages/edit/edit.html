@@ -1,25 +1,32 @@
 <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Admin</h2>
+    <h2>Admin</h2>
+    <p class="resume"></p>
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true" id="newPageHeader">
                         New page
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">Main</a>
                     <a href="#" class="list-group-item list-group-item-action">Core JS</a>
-                    <a href="#" class="list-group-item list-group-item-action">Frontend</a>
-                    <a href="#" class="list-group-item list-group-item-action">Backend</a>
-                    <a href="#" class="list-group-item list-group-item-action">Git + deploy</a>
+                    <a href="#" class="list-group-item list-group-item-action">web aplication</a>
+                    <a href="#" class="list-group-item list-group-item-action">Tool and platform</a>
+                    <a href="#" class="list-group-item list-group-item-action">Git + terminal</a>
                 </div>
             </div>
             <div class="col">
                 <form action="/edit" method="post" id="editform">
-                    <label for="title">Title</label>
+                    <label for="title">Title:</label>
+                    <br>
                     <input type="text" id="title" name="title" placeholder="New page">
-                    <label for="contents">Contents</label>
-                    <textarea id="contents" name="contents" cols="100"></textarea>
+                    <br>
+                    <br>
+                    <label for="contents">Contents:</label>
+                    <br>
+                    <textarea id="contents" name="contents" ></textarea>
+                    <br>
+                    <br>
                     <input type="submit" id="save" value="Save">
                 </form>
             </div>

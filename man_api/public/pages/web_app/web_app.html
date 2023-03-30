@@ -1,6 +1,6 @@
 <div class="container px-4 py-5" id="featured-3">
-  <h2 class="pb-2 border-bottom">Web applications</h2>
-  <p>.......</p>
+  <h2>Web applications</h2>
+  <p class="resume">.......</p>
   <br>
   <ul>
     <li><a href="#Frontend_structure">Frontend structure</a></li>
@@ -9,36 +9,35 @@
     <li><a href="#Static_files">Static files</a></li>
     <li><a href="#Client/server">Client/server</a></li>
     <li><a href="#Import_and_export">Import and export</a></li>
-    <li><a href="#readFileSync">readFileSync</a></li>
+    <li><a href="#readFileSync">ReadFileSync</a></li>
     <li><a href="#Redirection">Redirection</a></li>
     <li><a href="#Escaping_HTML_and_preventing_XSS">Escaping HTML and preventing XSS</a></li>
-    <li><a href="#body-parser">body-parser</a></li>
+    <li><a href="#body-parser">Body-parser</a></li>
     <li><a href="#URL_encoding">URL encoding</a></li>
   </ul>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="Frontend_structure">Frontend structure</h5>
     Frontend structure refers to the organization and arrangement of the different components and files in a project.
     <br>
     This structure helps to keep the code organized and maintainable. <br>
   </div>
   <br>
-  <div>
+  <div class="topic">
     <h5 id="REST-API_and_CRUD"> REST-API and CRUD</h5>
     REST API or RESTful API is used to transfer data between servers and clients.<br>
-    REST APIs are built around a set of principles that define how systems communicate using web standards such as HTTP
-    and URLs. <br>
+    REST APIs are built around a set of principles that define how systems communicate using web standards such as HTTPand URLs.<br>
     For Node.js, Express is one framework for building REST APIs. It makes creating endpoints, handling requests, and
     sending responses easier. <br>
-    A REST API sends and receives data in JSON format, so you might need to parse the request and response. <br>
+    A REST API sends and receives data in JSON format, so you might need to parse the request and response.<br>
     Express has built-in methods for this: <br>
     <pre>
   <code>
-app.use(express.json()); 
+app.use(express.json())
 </code>
 </pre>
-    When building a REST API, there are some conventions you should stick to when making and naming endpoints. <br><br>
-    The order of the CRUD methods (Create, Read, Update, and Delete) and corresponding endpoints should be: <br>
+    When building a REST API, there are some conventions you should stick to when making and naming endpoints.<br>
+    The order of the CRUD methods (Create, Read, Update, and Delete) and corresponding endpoints should be:<br>
     <ul>
       <li> GET (all data) </li>
       <li>GET (data by id) </li>
@@ -87,11 +86,9 @@ app.use(express.json());
     </table>
   </div>
   <br>
-  <div>
-    <br>
-  </div>
+  <div class="topic">
   <h5 id="Fetch">Fetch</h5>
-  fetch() is a method to make a HTTP request to a server, and get data back in response.<br>
+  <b>fetch()</b> is a method to make a HTTP request to a server, and get data back in response.<br>
   The fetch() method is commonly used for fetching resources such as HTML, JSON, or images.<br>
   There are different types of requests that can be made using fetch(), which correspondss to the REST operations:<br>
   <ul>
@@ -100,7 +97,7 @@ app.use(express.json());
     <li>PUT: update an existing resource</li>
     <li>PATCH: update the changed parts of an existing resource (not as common as PUT, as PUT in most situations will be
       sufficient)</li>
-    <li></li>DELETE: deletes a resource on the server.</li>
+    <li>DELETE: deletes a resource on the server.</li>
   </ul>
   The fetch() method returns a Promise that resolves to the Response object representing the response to the request
   made.<br>
@@ -114,19 +111,18 @@ console.log(result)
 </code>
 </pre>
 </div>
-<br>
-<div>
+<div class="topic">
   <h5 id="Static_files">Static files</h5>
   <pre>
       <code>
-const express = require('express'); 
-const app = express(); 
+const express = require('express')
+const app = express()
  
-app.use(express.static('public')); 
+app.use(express.static('public'))
  
 app.listen(8080, () => { 
-  console.log(“Server listening on port”,8080); 
-}); 
+  console.log(“Server listening on port”,8080)
+})
 </code>
 </pre>
   Static files are files served to the server without being modified or processed. These often include images, CSS,
@@ -135,20 +131,20 @@ app.listen(8080, () => {
   To restrict the client's access to certain parts of your code, you can use the following code:<br>
   <pre>
   <code>
-const express = require('express');  
-const app = express();  
+const express = require('express')
+const app = express()
   
-app.use(express.static('public'));  
+app.use(express.static('public')) 
   
 app.listen(8080, () => {  
-  console.log("Server listening on port", 8080);  
-}); 
+  console.log("Server listening on port", 8080) 
+})
 </code>
 </pre>
   Note that express.static('public') specifies that the public directory should be made available to the client.<br>
 </div>
 <br>
-<div>
+<div class="topic">
   <h5 id="Client/server">Client/server</h5>
   Clients are all our devices with access to the internet as phones, computers, tables and more.<br>
   They send requests to a server computer that holds the information.<br>
@@ -165,7 +161,7 @@ app.listen(8080, () => {
   Node has multiple frameworks to build server-side applications, such as Express.js<br>
 </div>
 <br>
-<div>
+<div class="topic">
   <h5 id="Import_and_export">Import and export</h5>
   JavaScript modules are used to organize and manage code. Import and export statements are used to control the
   visibility and accessibility of code across different modules.<br>
@@ -180,7 +176,7 @@ app.listen(8080, () => {
   in your current module. In Node.js, you can use the require() function to import a module:<br>
   <pre>
   <code>
-const express = require("express"); 
+const express = require("express")
 </code>
 </pre>
   You can also use “import” to do the same:
@@ -207,16 +203,16 @@ export default {
 </code>
 </pre>
 </div>
-<div>
-  <h5 id="readFileSync">readFileSync</h5>
-  readFileSync is a synchronous method provided by the “fs” module in Node.js.<br>
-  “fs” stands for file system and is used to write to files and read from files.<br>
+<div class="topic">
+  <h5 id="readFileSync">ReadFileSync</h5>
+  <b>readFileSync</b> is a synchronous method provided by the <b>“fs”</b>  module in Node.js.<br>
+  “fs” stands for <b>file system</b> and is used to write to files and read from files.<br>
   The method takes the path of a file as an argument.<br>
   Use only when it’s an entire page that needs to be loaded, as in first time you render a page from a template, as this
   function blocks everything until the rendering is done.<br>
 </div>
 <br>
-<div>
+<div class="topic">
   <h5 id="Redirection">Redirection</h5>
   Redirection is the process of sending a response to a client with a different URL than the one initially
   requested.<br>
@@ -237,7 +233,7 @@ window.location.replace(url)
 </code>
 </pre>
 </div>
-<div>
+<div class="topic">
   <h5 id="Escaping_HTML_and_preventing_XSS">Escaping HTML and preventing XSS</h5>
   XSS stands for Cross-Site Scripting. It is a type of security vulnerability that can occur in web applications.<br>
   XSS attacks happen when an attacker injects malicious code into a web page.<br>
@@ -256,9 +252,9 @@ let escaped = escape(“some html”)
 </pre>
 </div>
 <br>
-<div>
-  <h5 id="body-parser">body-parser</h5>
-  "body-parser" is a module for Node.js that allows you to extract the body portion of an incoming HTTP request and
+<div class="topic">
+  <h5 id="body-parser">Body-parser</h5>
+  <b>"body-parser"</b> is a module for Node.js that allows you to extract the body portion of an incoming HTTP request and
   expose it on the request object.<br>
   When a client sends a POST, PUT, or DELETE request to a server, the request can include data in the request body. This
   data can be in various formats, such as JSON and URL-encoded data.<br>
@@ -275,14 +271,14 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true })) 
  
 app.post('/users', function(req, res) { 
-  console.log(req.body); 
-  res.send('User created successfully'); 
-}); 
+  console.log(req.body)
+  res.send('User created successfully')
+})
 </code>
 </pre>
   The “req.body” property is used here to access the parsed data. Here we just log the parsed data in the console.
 </div>
-<div>
+<div class="topic">
   <h5 id="URL_encoding">URL encoding</h5>
   URL encoding is used to convert special characters and spaces in a URL into a format that can be safely transmitted
   over the internet.<br>

@@ -1,65 +1,112 @@
-body {
-    margin-left: 8vw;
+main {
+    justify-content: space-evenly;
 }
 
-form p {
-    margin-top: 5vh;
+nav {
+    background-color: #0acd589d;
 }
 
-form div {
-    font-weight: bold;
-    font-size: large;
-    margin-bottom: 1vh;
+img{
+    height: 6vh;
+    text-align: center;
+    padding-right: 2vw;
 }
 
-.hidden {
-    display: none
+.nav li a {
+    color: #113f26;
+    border-right: solid 1px #7cc599;
 }
 
-#hurra {
-    background-color: green;
-    color: white;
-    width: 50vw;
-    margin: 1vh 0;
+.nav li a:hover {
+    color: #376a4e;
 }
 
-#sorry {
-    background-color: red;
-    color: white;
-    width: 50vw;
-    margin: 1vh 0;
+#loginbutton {
+    background-color: #1a416c;
+    border-radius: 10px;
 }
 
-#answer {
-    background-color: rgb(242, 219, 126);
-    width: 50vw;
+#logintext {
+    color: #b3e7fa;
 }
 
-#newRandom {
-    background-color: rgb(124, 215, 206);
+#loginbutton:hover {
+    background-color: #30a4d6dc;
+    border-radius: 10px;
 }
 
-#reveal {
-    background-color: rgb(210, 143, 165);
+#logintext:hover {
+    color: #192d35;
 }
 
-#unix-time {
-    font-weight: bold;
-    color: rgb(101, 5, 101);
+h2 {
+    color: rgb(29, 29, 115);
 }
 
-#realyDifficult {
-    color: red;
+.resume {
+    border-bottom: 1px solid rgb(125, 166, 206);
 }
 
-#difficult {
-    color: orange;
+.feature {
+    box-sizing: border-box;
+    border: 1px solid rgb(72, 148, 181);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    word-wrap: normal;
+    width: 47%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#easy {
-    color: green;
+.feature:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.28), 0 6px 20px 0 rgba(14, 13, 13, 0.392);
 }
 
-#reset {
-    background-color: rgb(183, 181, 181);
+a {
+    text-decoration: none;
+    color: rgb(71, 71, 164);
+}
+
+a:visited {
+    color: rgb(71, 71, 164);
+}
+
+a:hover {
+    color: rgb(76, 144, 169);
+}
+
+.topic {
+    border-top: 2px solid rgb(70, 85, 70);
+    padding-top: 6vh;
+    padding-bottom: 4vh;
+}
+
+h5 {
+    color: rgb(3, 68, 56);
+}
+
+pre code {
+    color: rgb(43, 120, 49);
+    line-height: 2;
+    background-color: #ddf5eaaf;
+}
+
+code {
+    color: rgb(43, 120, 49);
+}
+
+table, th, td {
+    width: 50%;
+    border: 1px solid rgb(114, 119, 115);
+    background-color: #ddf5ea39;
+}
+
+#newPageHeader {
+    background-color: #184677;
+}
+
+textarea {
+    height: 45vh;
+    width: 100%;
 }
